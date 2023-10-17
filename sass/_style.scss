@@ -5,11 +5,126 @@ html{
 body{
     @include display-flex-center;
     background-color: $white;
+    height: 100%;
 }
 // HomePage
 .home-page{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     @include display-flex-center;
+    padding: 1rem;
+    position: relative;
     // navbar
+    .navbar-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        // Topnav
+        .top-nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            h1{
+                font-size: 2rem;
+                span{
+                    color: $dark-blue;
+                }
+            }
+            i{
+                font-size: 1.6rem;
+                cursor: pointer;
+                transition: ease-in .2s;
+
+
+                &:hover{
+                    color: $dark-blue;
+                    transition: ease-out .2s;
+                    border: 3px solid $dark-blue;
+                    padding: .3rem;
+                    border-radius: .5rem;
+                }
+            }
+            //  icon active style
+            .active-i{
+                border: 3px solid $dark-blue;
+                padding: .5rem;
+                border-radius: .5rem;
+                transition: all .2s ease-in-out;
+            }
+        }
+        // main NavBar 
+        .navbar{
+           height: auto;
+            padding: 1rem;
+            display: none;
+            .list{
+                padding: 0;
+                list-style: none;
+                transition: all .5s linear;
+                .nav-item{
+                    a{
+                        color: $silver3;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        position: relative;
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            width: 90%;
+                            transform: scaleX(0);
+                            height: 2px;
+                            left: 3px;
+                            bottom: 0;
+                            background-color: $dark-blue;
+                            transform-origin: bottom right;
+                            transition: transform .3s ease-out;
+                        }
+                        &:hover::after{
+                            color: $dark-blue;
+                            transform: scaleX(1);
+                            transform-origin: bottom left;
+                        }
+                    }
+                }
+            }
+        }
+        // NAVBAR active 
+        .navBar-active{
+            display: block;
+            transition: .3s ease-out;
+        }
+    }
+            // info
+            .info{
+                // position: absolute;
+                top: 250px;
+                width: 100;
+                @include display-flex-center;
+                .img{
+                    height: 180px;
+                    width: 190px;
+                    border-radius: 50%;
+                }
+                .texts{
+                    @include display-flex-center;
+                    padding: 1rem 1rem;
+                    h1{
+                        color: $dark-blue;
+                    }
+                    p{
+                        text-transform: capitalize;
+                        text-align: center;
+                        margin-top: .3rem;
+                        color: $silver3;
+                        font-weight: 400;
+                    }
+                }
+            }
+}
+// About
+.about{
+    height: 100vh;
 }

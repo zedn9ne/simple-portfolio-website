@@ -8,14 +8,123 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #fff;
+  height: 100%;
 }
 
 .home-page {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+.home-page .navbar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home-page .navbar-container .top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.home-page .navbar-container .top-nav h1 {
+  font-size: 2rem;
+}
+.home-page .navbar-container .top-nav h1 span {
+  color: #243757;
+}
+.home-page .navbar-container .top-nav i {
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+.home-page .navbar-container .top-nav i:hover {
+  color: #243757;
+  transition: ease-out 0.2s;
+  border: 3px solid #243757;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+.home-page .navbar-container .top-nav .active-i {
+  border: 3px solid #243757;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.home-page .navbar-container .navbar {
+  height: auto;
+  padding: 1rem;
+  display: none;
+}
+.home-page .navbar-container .navbar .list {
+  padding: 0;
+  list-style: none;
+  transition: all 0.5s linear;
+}
+.home-page .navbar-container .navbar .list .nav-item a {
+  color: #47443e;
+  text-decoration: none;
+  text-transform: capitalize;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.home-page .navbar-container .navbar .list .nav-item a::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  transform: scaleX(0);
+  height: 2px;
+  left: 3px;
+  bottom: 0;
+  background-color: #243757;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.home-page .navbar-container .navbar .list .nav-item a:hover::after {
+  color: #243757;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.home-page .navbar-container .navBar-active {
+  display: block;
+  transition: 0.3s ease-out;
+}
+.home-page .info {
+  top: 250px;
+  width: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-page .info .img {
+  height: 180px;
+  width: 190px;
+  border-radius: 50%;
+}
+.home-page .info .texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+.home-page .info .texts h1 {
+  color: #243757;
+}
+.home-page .info .texts p {
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 0.3rem;
+  color: #47443e;
+  font-weight: 400;
+}
+
+.about {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
