@@ -1,0 +1,15 @@
+html{
+    font-family: 'Poppins';
+}
+// Body 
+body{
+    @include display-flex-center;
+    background-color: $white;
+}
+// HomePage
+.home-page{
+    height: 100vh;
+    width: 100%;
+    @include display-flex-center;
+    // navbar
+}
