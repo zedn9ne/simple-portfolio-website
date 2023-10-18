@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 html {
   font-family: "Poppins";
+  scroll-behavior: smooth;
 }
 
 body {
@@ -10,9 +11,23 @@ body {
   background-color: #fff;
   height: 100%;
 }
+body .bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  opacity: 20%;
+  display: block;
+}
+body .desktopBG {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  opacity: 13%;
+  display: none;
+}
 
 .home-page {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -40,11 +55,11 @@ body {
 .home-page .navbar-container .top-nav i {
   font-size: 1.6rem;
   cursor: pointer;
-  transition: ease-in 0.2s;
+  transition: ease-in 0.1s;
 }
 .home-page .navbar-container .top-nav i:hover {
   color: #243757;
-  transition: ease-out 0.2s;
+  transition: ease-out 0.1s;
   border: 3px solid #243757;
   padding: 0.3rem;
   border-radius: 0.5rem;
@@ -53,7 +68,7 @@ body {
   border: 3px solid #243757;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .home-page .navbar-container .navbar {
   height: auto;
@@ -95,7 +110,8 @@ body {
   transition: 0.3s ease-out;
 }
 .home-page .info {
-  top: 250px;
+  position: absolute;
+  top: 200px;
   width: 100;
   display: flex;
   flex-direction: column;
@@ -121,10 +137,102 @@ body {
   margin-top: 0.3rem;
   color: #47443e;
   font-weight: 400;
+  font-size: 0.9rem;
 }
 
-.about {
-  height: 100vh;
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section h1 {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #243757;
+}
+
+footer {
+  width: 100%;
+  z-index: -1;
+}
+footer p {
+  text-align: center;
+  padding: 1rem;
+}
+
+.arrow {
+  position: fixed;
+  bottom: 5%;
+  right: 7%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.825rem;
+  box-shadow: inset 0px 0px 10px #243757;
+  display: none;
+  transition: all 0.2s ease-in;
+  z-index: 100;
+}
+.arrow:hover {
+  padding: 0.7rem 1.1rem;
+  transition: all 0.2s ease-out;
+}
+.arrow i {
+  color: #47443e;
+}
+
+.arrow-active {
+  display: block;
+  transition: all 0.1s ease-out;
+}
+
+@media screen and (min-width: 1024px) {
+  body .bg {
+    display: none;
+  }
+  body .desktopBG {
+    display: block;
+  }
+  .home-page .navbar-container {
+    width: 90%;
+    margin-top: 1rem;
+    flex-direction: row;
+  }
+  .home-page .navbar-container .top-nav {
+    width: 50%;
+  }
+  .home-page .navbar-container .top-nav i {
+    display: none;
+  }
+  .home-page .navbar-container .navbar {
+    width: 50%;
+    display: block;
+  }
+  .home-page .navbar-container .navbar .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .home-page .info {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 900px;
+    top: 350px;
+  }
+  .home-page .info .img {
+    height: 280px;
+    width: 280px;
+  }
+  .home-page .info .texts h1 {
+    font-size: 3rem;
+  }
+  .home-page .info .texts p {
+    font-size: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

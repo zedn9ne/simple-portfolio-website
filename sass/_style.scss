@@ -1,15 +1,30 @@
 html{
     font-family: 'Poppins';
+    scroll-behavior: smooth;
 }
 // Body 
 body{
     @include display-flex-center;
     background-color: $white;
     height: 100%;
+    .bg{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        opacity: 20%;
+        display: block;
+    }
+    .desktopBG{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        opacity: 13%;
+        display: none;
+    }
 }
 // HomePage
 .home-page{
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     @include display-flex-center;
     padding: 1rem;
@@ -34,12 +49,12 @@ body{
             i{
                 font-size: 1.6rem;
                 cursor: pointer;
-                transition: ease-in .2s;
+                transition: ease-in .1s;
 
 
                 &:hover{
                     color: $dark-blue;
-                    transition: ease-out .2s;
+                    transition: ease-out .1s;
                     border: 3px solid $dark-blue;
                     padding: .3rem;
                     border-radius: .5rem;
@@ -50,12 +65,12 @@ body{
                 border: 3px solid $dark-blue;
                 padding: .5rem;
                 border-radius: .5rem;
-                transition: all .2s ease-in-out;
+                transition: all .1s ease-in-out;
             }
         }
         // main NavBar 
         .navbar{
-           height: auto;
+            height: auto;
             padding: 1rem;
             display: none;
             .list{
@@ -99,8 +114,8 @@ body{
     }
             // info
             .info{
-                // position: absolute;
-                top: 250px;
+                position: absolute;
+                top: 200px;
                 width: 100;
                 @include display-flex-center;
                 .img{
@@ -120,11 +135,53 @@ body{
                         margin-top: .3rem;
                         color: $silver3;
                         font-weight: 400;
+                        font-size: .9rem;
                     }
                 }
             }
 }
 // About
-.about{
-    height: 100vh;
+section{
+    min-height: 100vh;
+    width: 100%;
+    @include display-flex-center;
+    h1{
+        text-transform: capitalize;
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: $dark-blue;
+    }
 }
+footer{
+    width: 100%;
+    z-index: -1;
+    p{
+        text-align: center;
+        padding: 1rem;
+    }
+}
+.arrow{
+    position: fixed;
+    bottom: 5%;
+    right: 7%;
+    border: 1px solid rgb(0,0,0,.3);
+    padding: .5rem .9rem;
+    border-radius: .825rem;
+    box-shadow: inset 0px 0px 10px $dark-blue;
+    display: none;
+    transition: all .2s ease-in;
+    z-index: 100;
+
+        &:hover{
+            padding: .7rem 1.1rem;
+            transition: all .2s ease-out;
+        }
+    i{
+        color: $silver3;
+    }
+}
+.arrow-active{
+    display: block;
+    transition: all .1s ease-out;
+}
+@include responsive;
